@@ -1,0 +1,57 @@
+{
+  "name": "dsh-cookie-meter",
+  "version": "0.1.0",
+  "description": "DSH 桌面版登录 cookie 百分表：浮窗显示请求头占用百分比（过半变红），带一键清理按钮。",
+  "type": "module",
+  "license": "MIT",
+  "author": "大肥鱼",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridistant8-art/dsh-cookie-meter.git"
+  },
+  "homepage": "https://github.com/ridistant8-art/dsh-cookie-meter#readme",
+  "bugs": {
+    "url": "https://github.com/ridistant8-art/dsh-cookie-meter/issues"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cookie",
+    "431",
+    "desktop"
+  ],
+  "files": [
+    "index.js",
+    "probe.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test:host": "node scripts/smoke.mjs",
+    "test:client": "node scripts/smoke-client.mjs",
+    "test:boot": "node scripts/smoke-boot.mjs"
+  },
+  "os": [
+    "win32"
+  ],
+  "dsh": {
+    "category": "extension",
+    "displayName": "Cookie 百分表",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  }
+}
